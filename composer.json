@@ -1,5 +1,8 @@
 {
 	"name": "consistence/consistence-robot-loader-class-finder",
 	"description": "Integration of Nette RobotLoader as Consistence ClassFinder",
-	"license": "MIT"
+	"license": "MIT",
+	"config": {
+		"bin-dir": "bin"
+	}
 }
