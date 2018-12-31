@@ -9,7 +9,7 @@ use Nette\Loaders\RobotLoader;
 class RobotLoaderClassFinderTest extends \PHPUnit\Framework\TestCase
 {
 
-	public function testFindClass()
+	public function testFindClass(): void
 	{
 		$classList = array_values($this->getRobotLoaderClassFinder()->findByInterface(ExtendingClass::class));
 
@@ -17,7 +17,7 @@ class RobotLoaderClassFinderTest extends \PHPUnit\Framework\TestCase
 		$this->assertCount(1, $classList);
 	}
 
-	public function testFindClassAndChildren()
+	public function testFindClassAndChildren(): void
 	{
 		$classList = array_values($this->getRobotLoaderClassFinder()->findByInterface(BaseClass::class));
 		sort($classList);
@@ -30,7 +30,7 @@ class RobotLoaderClassFinderTest extends \PHPUnit\Framework\TestCase
 		$this->assertEquals($expected, $classList);
 	}
 
-	public function testFindInterface()
+	public function testFindInterface(): void
 	{
 		$classList = array_values($this->getRobotLoaderClassFinder()->findByInterface(NotImplementedInterface::class));
 
@@ -38,7 +38,7 @@ class RobotLoaderClassFinderTest extends \PHPUnit\Framework\TestCase
 		$this->assertCount(1, $classList);
 	}
 
-	public function testFindInterfaceAndImplementations()
+	public function testFindInterfaceAndImplementations(): void
 	{
 		$classList = array_values($this->getRobotLoaderClassFinder()->findByInterface(BaseInterface::class));
 		sort($classList);
@@ -53,7 +53,7 @@ class RobotLoaderClassFinderTest extends \PHPUnit\Framework\TestCase
 		$this->assertEquals($expected, $classList);
 	}
 
-	private function getRobotLoaderClassFinder()
+	private function getRobotLoaderClassFinder(): RobotLoaderClassFinder
 	{
 		$robotLoader = new RobotLoader();
 		$robotLoader->addDirectory(__DIR__ . '/data');

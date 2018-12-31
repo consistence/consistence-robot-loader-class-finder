@@ -28,7 +28,7 @@ class LazyRobotLoaderClassFinder extends \Consistence\ClassFinder\RobotLoader\Ro
 	 * @param string $interfaceName
 	 * @return string[] array of class names
 	 */
-	public function findByInterface(string $interfaceName)
+	public function findByInterface(string $interfaceName): array
 	{
 		if (!$this->robotLoaderRebuilt) {
 			$this->robotLoader->rebuild();

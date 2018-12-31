@@ -24,7 +24,7 @@ class RobotLoaderClassFinder extends \Consistence\ObjectPrototype implements \Co
 	 * @param string $interfaceName
 	 * @return string[] array of class names
 	 */
-	public function findByInterface(string $interfaceName)
+	public function findByInterface(string $interfaceName): array
 	{
 		return ArrayType::filterValuesByCallback(
 			array_keys($this->robotLoader->getIndexedClasses()),

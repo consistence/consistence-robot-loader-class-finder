@@ -3,6 +3,7 @@
 	"description": "Integration of Nette RobotLoader as Consistence ClassFinder",
 	"license": "MIT",
 	"require": {
+		"php": "~7.1",
 		"consistence/consistence": "~1.0",
 		"doctrine/orm": "~2.4",
 		"nette/finder": "~2.4",

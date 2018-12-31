@@ -9,7 +9,7 @@ use Nette\Loaders\RobotLoader;
 class LazyRobotLoaderClassFinderTest extends \PHPUnit\Framework\TestCase
 {
 
-	public function testRebuildRobotLoaderOnlyOnFirstRun()
+	public function testRebuildRobotLoaderOnlyOnFirstRun(): void
 	{
 		$robotLoader = $this
 			->getMockBuilder(RobotLoader::class)
