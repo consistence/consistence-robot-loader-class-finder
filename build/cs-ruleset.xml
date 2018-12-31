@@ -3,10 +3,10 @@
 	<rule ref="../vendor/consistence/coding-standard/Consistence/ruleset.xml"/>
 	<rule ref="SlevomatCodingStandard.Files.TypeNameMatchesFileName">
 		<properties>
-			<property name="rootNamespaces" type="array" value="
-				src => Consistence\ClassFinder\RobotLoader,
-				tests => Consistence\ClassFinder\RobotLoader,
-			"/>
+			<property name="rootNamespaces" type="array">
+				<element key="src" value="Consistence\ClassFinder\RobotLoader"/>
+				<element key="tests" value="Consistence\ClassFinder\RobotLoader"/>
+			</property>
 		</properties>
 		<exclude-pattern>*/data/*.php</exclude-pattern>
 		<exclude-pattern>*/exceptions/*Exception.php</exclude-pattern>
