@@ -4,7 +4,7 @@
 	"license": "MIT",
 	"require": {
 		"php": "~7.2",
-		"consistence/consistence": "~1.0",
+		"consistence/consistence": "~1.0|~2.0",
 		"doctrine/orm": "~2.4",
 		"nette/finder": "~2.4",
 		"nette/robot-loader": "~3.0",
