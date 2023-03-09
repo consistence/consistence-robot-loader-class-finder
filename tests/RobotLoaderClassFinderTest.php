@@ -5,6 +5,7 @@ declare(strict_types = 1);
 namespace Consistence\ClassFinder\RobotLoader;
 
 use Nette\Loaders\RobotLoader;
+use PHPUnit\Framework\Assert;
 
 class RobotLoaderClassFinderTest extends \PHPUnit\Framework\TestCase
 {
@@ -13,8 +14,8 @@ class RobotLoaderClassFinderTest extends \PHPUnit\Framework\TestCase
 	{
 		$classList = array_values($this->getRobotLoaderClassFinder()->findByInterface(ExtendingClass::class));
 
-		$this->assertContains(ExtendingClass::class, $classList);
-		$this->assertCount(1, $classList);
+		Assert::assertContains(ExtendingClass::class, $classList);
+		Assert::assertCount(1, $classList);
 	}
 
 	public function testFindClassAndChildren(): void
@@ -27,15 +28,15 @@ class RobotLoaderClassFinderTest extends \PHPUnit\Framework\TestCase
 			ExtendingClass::class,
 		];
 
-		$this->assertEquals($expected, $classList);
+		Assert::assertEquals($expected, $classList);
 	}
 
 	public function testFindInterface(): void
 	{
 		$classList = array_values($this->getRobotLoaderClassFinder()->findByInterface(NotImplementedInterface::class));
 
-		$this->assertContains(NotImplementedInterface::class, $classList);
-		$this->assertCount(1, $classList);
+		Assert::assertContains(NotImplementedInterface::class, $classList);
+		Assert::assertCount(1, $classList);
 	}
 
 	public function testFindInterfaceAndImplementations(): void
@@ -50,7 +51,7 @@ class RobotLoaderClassFinderTest extends \PHPUnit\Framework\TestCase
 			ExtendingInterface::class,
 		];
 
-		$this->assertEquals($expected, $classList);
+		Assert::assertEquals($expected, $classList);
 	}
 
 	private function getRobotLoaderClassFinder(): RobotLoaderClassFinder
