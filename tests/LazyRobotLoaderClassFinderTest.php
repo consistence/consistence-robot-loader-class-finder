@@ -16,7 +16,7 @@ class LazyRobotLoaderClassFinderTest extends \PHPUnit\Framework\TestCase
 			->setMethods(['rebuild'])
 			->getMock();
 		$robotLoader
-			->expects($this->once())
+			->expects(self::once())
 			->method('rebuild');
 
 		$lazyClassFinder = new LazyRobotLoaderClassFinder($robotLoader);
